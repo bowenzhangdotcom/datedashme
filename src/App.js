@@ -1,30 +1,59 @@
 import React from "react";
 import styles from "./App.module.css";
 
+import FileSubmit from "./components/FileSubmit/FileSubmit";
+import HingeChart from "./components/HingeChart/HingeChart";
+import processHingeData from "./api/processHingeData.js";
 class App extends React.Component {
   state = {};
 
   constructor(props) {
     super(props);
     this.state = {
-      hingeData: "",
+      rawHingeData: null,
+      processedHingeData: null,
     };
   }
 
-  //   handleHingeDataSubmission(event) {
-  //     this.setState({
-  //       hingeData: event.target.data,
-  //     });
-  //     console.log(this.state);
-  //   }
+  //Generate summary stats from rawHingeData
+  // How to use renders if data is null
+  // Try new dataset once chart renders
+  // Add some error bits
+  // Update the default data bits to AS?
+  //TODO handle file validation, no virus pls
+  // footer for my linkedin / personal website
+
+  handleFileChange = (event) => {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let obj = JSON.parse(e.target.result);
+      this.setState({ rawHingeData: obj }, () => {
+        this.setState({
+          processedHingeData: processHingeData(this.state.rawHingeData),
+        });
+      });
+    };
+    reader.readAsText(event.target.files[0]);
+  };
 
   render() {
+    const defaultHingeData = [
+      ["From", "To", "Count"],
+      ["A", "X", 5],
+      ["A", "Y", 7],
+      ["A", "Z", 6],
+      ["B", "X", 2],
+      ["B", "Y", 9],
+      ["B", "Z", 4],
+    ];
     return (
       <>
         <div className={styles.Logo}>DateDash.Me</div>
         <div className={styles.HowToUse}>
           Some filler text on how to use this!
         </div>
+        <FileSubmit handleFileChange={this.handleFileChange} />
+        <HingeChart data={this.state.processedHingeData || defaultHingeData} />
       </>
     );
   }
