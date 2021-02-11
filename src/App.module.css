@@ -6,6 +6,8 @@ body {
   opacity: 0.87;
   background-color: #121212;
   font-family: arial;
+  display: flex;
+  justify-content: center;
 }
 
 .HowToUse {

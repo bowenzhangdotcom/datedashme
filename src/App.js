@@ -15,6 +15,7 @@ class App extends React.Component {
     };
   }
 
+  //set up private repository for this on github!
   //Generate summary stats from rawHingeData
   // How to use renders if data is null
   // Try new dataset once chart renders
