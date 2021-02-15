@@ -19,7 +19,6 @@ class App extends React.Component {
   // How to use renders if data is null
   // Try new dataset once chart renders
   // Add some error bits
-  // Update the default data bits to AS?
   //TODO handle file validation, no virus pls
   // footer for my linkedin / personal website
 
@@ -52,23 +51,21 @@ class App extends React.Component {
       "Total Interactions": 1231,
     };
     return (
-      <>
-        <div className={styles.BodyRow}>
-          <div className={styles.InfoColumn}>
-            <div className={styles.Logo}>DateDash</div>
-            <div className={styles.Description}>
-              Brief explanation of what this data is and represents!
-            </div>
-            <FileSubmit handleFileChange={this.handleFileChange} />
+      <div className={styles.BodyRow}>
+        <div className={styles.InfoColumn}>
+          <div className={styles.Logo}>DateDash</div>
+          <div className={styles.Description}>
+            Brief explanation of what this data is and represents!
           </div>
-          <div className={styles.ChartColumn}>
-            <div className={styles.ChartHeader}>Your Dating Dashboard</div>
-            <HingeDonutChart
-              data={this.state.processedHingeData || defaultHingeData}
-            />
-          </div>
+          <FileSubmit handleFileChange={this.handleFileChange} />
         </div>
-      </>
+        <div className={styles.ChartColumn}>
+          <div className={styles.ChartHeader}>Your Dating Dashboard</div>
+          <HingeDonutChart
+            data={this.state.processedHingeData || defaultHingeData}
+          />
+        </div>
+      </div>
     );
   }
 }

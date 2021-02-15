@@ -1,10 +1,9 @@
 body {
-  background-attachment: fixed;
-  background-size: cover;
   text-align: center;
-  display: flex;
+  display: block;
   font-family: Arial;
   color: rgba(0, 0, 0, 1);
+  width: 100%;
 }
 
 .BodyRow {
@@ -14,12 +13,12 @@ body {
 
 .InfoColumn {
   float: left;
-  flex-grow: 31;
+  width: 31%;
 }
 
 .ChartColumn {
   float: right;
-  flex-grow: 69;
+  width: 69%;
 }
 
 .Logo {
