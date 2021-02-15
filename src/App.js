@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./App.module.css";
 
 import FileSubmit from "./components/FileSubmit/FileSubmit";
-import HingeChart from "./components/HingeChart/HingeChart";
+import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
 import processHingeData from "./api/processHingeData.js";
 class App extends React.Component {
   state = {};
@@ -48,7 +48,7 @@ class App extends React.Component {
     ];
     return (
       <>
-        <div className={styles.Row}>
+        <div className={styles.BodyRow}>
           <div className={styles.InfoColumn}>
             <div className={styles.Logo}>DateDash</div>
             <div className={styles.Description}>
@@ -57,8 +57,8 @@ class App extends React.Component {
             <FileSubmit handleFileChange={this.handleFileChange} />
           </div>
           <div className={styles.ChartColumn}>
-            <div>Your Dating Dashboard</div>
-            <HingeChart
+            <div className={styles.ChartHeader}>Your Dating Dashboard</div>
+            <HingeDonutChart
               data={this.state.processedHingeData || defaultHingeData}
             />
           </div>

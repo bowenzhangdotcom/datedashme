@@ -6,24 +6,22 @@ body {
   opacity: 0.87;
   background-color: #121212;
   display: flex;
-  justify-content: center;
   font-family: Arial;
 }
 
-.Row:after {
-  content: "";
-  display: table;
-  clear: both;
+.BodyRow {
+  display: flex;
+  width: 100%;
 }
 
 .InfoColumn {
   float: left;
-  width: 31%;
+  flex-grow: 31;
 }
 
 .ChartColumn {
   float: right;
-  width: 69%;
+  flex-grow: 69;
 }
 
 .Logo {
@@ -43,5 +41,15 @@ body {
   left: 122px;
   font-weight: Italic;
   font-size: 14px;
+  text-align: left;
+}
+
+.ChartHeader {
+  width: 342px;
+  color: rgba(255, 255, 255, 1);
+  top: 150px;
+  left: 487px;
+  font-weight: Regular;
+  font-size: 24px;
   text-align: left;
 }
