@@ -1,7 +1,7 @@
 .FileSubmit {
   width: 160px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.07000000029802322);
+  background: rgba(245, 249, 217, 1);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@
 }
 
 .CustomFileUpload {
-  border: 1px solid rgba(214, 232, 101, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
   padding: 6px 0px 12px 0px;
   cursor: pointer;
   width: 140px;

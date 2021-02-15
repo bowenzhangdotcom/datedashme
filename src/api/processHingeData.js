@@ -89,7 +89,6 @@ const getConversation = (rawHingeData) => {
         let body = String(rawHingeData[interactionNum]["chats"][chat]["body"]);
         if (body.match(phoneSearch)) {
           phoneGiven = true;
-          console.log(body);
           break;
         }
       }

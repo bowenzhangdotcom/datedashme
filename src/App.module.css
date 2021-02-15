@@ -2,11 +2,9 @@ body {
   background-attachment: fixed;
   background-size: cover;
   text-align: center;
-  color: white;
-  opacity: 0.87;
-  background-color: #121212;
   display: flex;
   font-family: Arial;
+  color: rgba(0, 0, 0, 1);
 }
 
 .BodyRow {
@@ -26,7 +24,7 @@ body {
 
 .Logo {
   width: 278px;
-  color: rgba(214, 232, 101, 1);
+  color: rgba(136, 146, 68, 1);
   top: 133px;
   left: 122px;
   font-weight: Medium;
@@ -36,7 +34,6 @@ body {
 
 .Description {
   width: 223px;
-  color: rgba(255, 255, 255, 1);
   top: 228px;
   left: 122px;
   font-weight: Italic;
@@ -46,7 +43,6 @@ body {
 
 .ChartHeader {
   width: 342px;
-  color: rgba(255, 255, 255, 1);
   top: 150px;
   left: 487px;
   font-weight: Regular;

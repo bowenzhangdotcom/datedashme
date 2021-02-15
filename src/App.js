@@ -37,15 +37,20 @@ class App extends React.Component {
   };
 
   render() {
-    const defaultHingeData = [
-      ["From", "To", "Count"],
-      ["A", "X", 5],
-      ["A", "Y", 7],
-      ["A", "Z", 6],
-      ["B", "X", 2],
-      ["B", "Y", 9],
-      ["B", "Z", 4],
-    ];
+    const defaultHingeData = {
+      Conversation: 34,
+      Fizzle: 48,
+      "I Ghosted": 22,
+      "I Liked Them": 85,
+      Matched: 149,
+      "No Match": 1082,
+      "Phone Conversation": 24,
+      "Swipe Left": 859,
+      "Swipe Right": 223,
+      "They Ghosted": 21,
+      "They Liked Me": 64,
+      "Total Interactions": 1231,
+    };
     return (
       <>
         <div className={styles.BodyRow}>
