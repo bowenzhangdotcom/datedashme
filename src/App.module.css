@@ -5,10 +5,43 @@ body {
   color: white;
   opacity: 0.87;
   background-color: #121212;
-  font-family: arial;
   display: flex;
   justify-content: center;
+  font-family: Arial;
 }
 
-.HowToUse {
+.Row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.InfoColumn {
+  float: left;
+  width: 31%;
+}
+
+.ChartColumn {
+  float: right;
+  width: 69%;
+}
+
+.Logo {
+  width: 278px;
+  color: rgba(214, 232, 101, 1);
+  top: 133px;
+  left: 122px;
+  font-weight: Medium;
+  font-size: 64px;
+  text-align: left;
+}
+
+.Description {
+  width: 223px;
+  color: rgba(255, 255, 255, 1);
+  top: 228px;
+  left: 122px;
+  font-weight: Italic;
+  font-size: 14px;
+  text-align: left;
 }

@@ -7,8 +7,8 @@ class HingeChart extends React.Component {
     let sankeyData = this.props.data
     return (
         <Chart
-        width={969}
-        height={969}
+        width={420}
+        height={420}
         chartType="Sankey"
         loader={<div>Loading Chart</div>}
         data={sankeyData}

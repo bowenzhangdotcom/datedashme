@@ -1,0 +1,26 @@
+.FileSubmit {
+  width: 160px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.07000000029802322);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Input {
+  display: none;
+}
+
+.CustomFileUpload {
+  border: 1px solid rgba(214, 232, 101, 1);
+  padding: 6px 0px 12px 0px;
+  cursor: pointer;
+  width: 140px;
+  height: 22px;
+  border-radius: 10px;
+  border-style: dashed;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 24px;
+}

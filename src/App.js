@@ -15,7 +15,6 @@ class App extends React.Component {
     };
   }
 
-  //set up private repository for this on github!
   //Generate summary stats from rawHingeData
   // How to use renders if data is null
   // Try new dataset once chart renders
@@ -49,12 +48,21 @@ class App extends React.Component {
     ];
     return (
       <>
-        <div className={styles.Logo}>DateDash.Me</div>
-        <div className={styles.HowToUse}>
-          Some filler text on how to use this!
+        <div className={styles.Row}>
+          <div className={styles.InfoColumn}>
+            <div className={styles.Logo}>DateDash</div>
+            <div className={styles.Description}>
+              Brief explanation of what this data is and represents!
+            </div>
+            <FileSubmit handleFileChange={this.handleFileChange} />
+          </div>
+          <div className={styles.ChartColumn}>
+            <div>Your Dating Dashboard</div>
+            <HingeChart
+              data={this.state.processedHingeData || defaultHingeData}
+            />
+          </div>
         </div>
-        <FileSubmit handleFileChange={this.handleFileChange} />
-        <HingeChart data={this.state.processedHingeData || defaultHingeData} />
       </>
     );
   }
