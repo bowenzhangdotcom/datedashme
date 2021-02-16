@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       rawHingeData: null,
       processedHingeData: null,
+      header: null,
     };
   }
 
@@ -29,6 +30,7 @@ class App extends React.Component {
       this.setState({ rawHingeData: obj }, () => {
         this.setState({
           processedHingeData: processHingeData(this.state.rawHingeData),
+          header: "Your Dating Dashboard",
         });
       });
     };
@@ -60,7 +62,9 @@ class App extends React.Component {
           <FileSubmit handleFileChange={this.handleFileChange} />
         </div>
         <div className={styles.ChartColumn}>
-          <div className={styles.ChartHeader}>Your Dating Dashboard</div>
+          <div className={styles.ChartHeader}>
+            {this.state.header || "Example Dashboard"}
+          </div>
           <HingeDonutChart
             data={this.state.processedHingeData || defaultHingeData}
           />
