@@ -1,10 +1,9 @@
 import React from 'react'
-//import { ChartDonut } from '@patternfly/react-charts';
 import styles from './HingeDonutChart.module.css';
 import { VictoryPie } from 'victory';
 
 
-class HingeChart extends React.Component {
+class HingeDonutChart extends React.Component {
   render() {
     let hingeData = this.props.data
     console.log(hingeData);
@@ -41,4 +40,4 @@ class HingeChart extends React.Component {
   }
 }
 
-export default HingeChart
+export default HingeDonutChart

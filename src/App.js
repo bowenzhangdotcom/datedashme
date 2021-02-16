@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 
 import FileSubmit from "./components/FileSubmit/FileSubmit";
 import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
+import HingeTreeMap from "./components/HingeTreeMap/HingeTreeMap";
 import processHingeData from "./api/processHingeData.js";
 class App extends React.Component {
   state = {};
@@ -66,6 +67,9 @@ class App extends React.Component {
             {this.state.header || "Example Dashboard"}
           </div>
           <HingeDonutChart
+            data={this.state.processedHingeData || defaultHingeData}
+          />
+          <HingeTreeMap
             data={this.state.processedHingeData || defaultHingeData}
           />
         </div>
