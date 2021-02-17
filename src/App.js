@@ -18,8 +18,7 @@ class App extends React.Component {
   }
 
   //Generate summary stats from rawHingeData
-  // How to use renders if data is null
-  // Try new dataset once chart renders
+  // JY figure out label crowding?
   // Add some error bits
   //TODO handle file validation, no virus pls
   // footer for my linkedin / personal website
