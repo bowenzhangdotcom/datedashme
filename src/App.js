@@ -21,7 +21,6 @@ class App extends React.Component {
   // Add error handling to matches.json upload
   // Shift Description to separate react component with more details
   // footer for my linkedin / personal website
-  // JY figure out label crowding?
 
   handleFileChange = (event) => {
     let reader = new FileReader();
