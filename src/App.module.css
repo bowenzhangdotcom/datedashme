@@ -28,21 +28,17 @@ body {
 }
 
 .Logo {
-  width: 278px;
   color: rgba(136, 146, 68, 1);
-  top: 133px;
-  left: 122px;
   font-weight: Medium;
   font-size: 64px;
   text-align: left;
 }
 
 .Description {
-  width: 223px;
-  top: 228px;
-  left: 122px;
-  font-weight: Italic;
+  font-style: Italic;
   font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: left;
 }
 

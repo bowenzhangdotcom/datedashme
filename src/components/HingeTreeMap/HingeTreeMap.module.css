@@ -12,20 +12,20 @@
 .TreeMap {
   position: relative;
   background-color: rgba(136, 146, 68, 0.30000001192092896);
-  min-width: 644px;
+  min-width: 672px;
   height: 230px;
 }
 
 .Matched {
   background: rgba(136, 146, 68, 0.30000001192092896);
-  min-width: 300px;
+  min-width: 314px;
   height: 180px;
   margin: 30px 10px 10px 10px;
 }
 
 .NoMatched {
   background: rgba(136, 146, 68, 0.30000001192092896);
-  min-width: 300px;
+  min-width: 314px;
   height: 180px;
   margin: 30px 10px 10px 10px;
 }
