@@ -1,130 +1,77 @@
+.TreeMap,
+.Matched,
+.NoMatched,
+.MatchedILike,
+.MatchedTheyLike,
+.NoMatchedILike,
+.NoMatchedTheyLike {
+  border: 0.5px solid rgba(0, 0, 0, 1);
+  display: flex;
+}
+
 .TreeMap {
   position: relative;
   background-color: rgba(136, 146, 68, 0.30000001192092896);
-  width: 846px;
-  height: 256px;
-  border: 0.5px solid rgba(0, 0, 0, 1);
-  display: flex;
+  min-width: 644px;
+  height: 230px;
 }
 
 .Matched {
-  border: 0.5px solid rgba(0, 0, 0, 1);
   background: rgba(136, 146, 68, 0.30000001192092896);
-  display: flex;
-  width: 345px;
-  height: 205px;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  min-width: 300px;
+  height: 180px;
+  margin: 30px 10px 10px 10px;
 }
 
 .NoMatched {
-  border: 0.5px solid rgba(0, 0, 0, 1);
   background: rgba(136, 146, 68, 0.30000001192092896);
-  display: flex;
-  width: 456px;
-  height: 205px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  min-width: 300px;
+  height: 180px;
+  margin: 30px 10px 10px 10px;
 }
 
 .MatchedILike {
   background: rgba(136, 146, 68, 0.30000001192092896);
-  border: 0.5px solid rgba(0, 0, 0, 1);
   align-items: center;
   justify-content: center;
-  display: flex;
-  width: 129px;
-  height: 153px;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  min-width: 135px;
+  height: 130px;
+  margin: 30px 10px 10px 10px;
 }
 
 .MatchedTheyLike {
   background: rgba(136, 146, 68, 0.30000001192092896);
-  border: 0.5px solid rgba(0, 0, 0, 1);
   align-items: center;
   justify-content: center;
-  display: flex;
-  width: 186px;
-  height: 153px;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  min-width: 135px;
+  height: 130px;
+  margin: 30px 10px 10px 10px;
 }
 
 .NoMatchedILike {
   background: rgba(136, 146, 68, 0.30000001192092896);
-  border: 0.5px solid rgba(0, 0, 0, 1);
   align-items: center;
   justify-content: center;
-  display: flex;
-  width: 173px;
-  height: 153px;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  min-width: 135px;
+  height: 130px;
+  margin: 30px 10px 10px 10px;
 }
 
 .NoMatchedTheyLike {
   background: rgba(136, 146, 68, 0.30000001192092896);
-  border: 0.5px solid rgba(0, 0, 0, 1);
   align-items: center;
   justify-content: center;
-  display: flex;
-  width: 248px;
-  height: 153px;
-  margin-left: 10px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  min-width: 135px;
+  height: 130px;
+  margin: 30px 10px 10px 10px;
 }
 
-.TotalInteractionsLabel {
-  align-self: flex-start;
-  position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.MatchedLabel {
-  align-self: flex-start;
-  position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.NoMatchedLabel {
-  align-self: flex-start;
-  position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.MatchedILikeLabel {
-  align-self: flex-start;
-  position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-.MatchedTheyLikeLabel {
-  align-self: flex-start;
-  position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-.NoMatchedILikeLabel {
-  align-self: flex-start;
-  position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
-}
+.TotalInteractionsLabel,
+.MatchedLabel,
+.MatchedILikeLabel,
+.MatchedTheyLikeLabel,
+.NoMatchedLabel,
+.NoMatchedILikeLabel,
 .NoMatchedTheyLikeLabel {
   align-self: flex-start;
   position: absolute;

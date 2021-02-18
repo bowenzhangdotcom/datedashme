@@ -15,7 +15,7 @@ class FileSubmit extends React.Component {
       <div className={styles.FileSubmit}>
         <label className={styles.CustomFileUpload}>
           <input className={styles.Input} type="file" onChange={this.props.handleFileChange} />        
-          Upload
+          Add Data
         </label>
       </div>
    )

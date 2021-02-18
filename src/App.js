@@ -17,11 +17,11 @@ class App extends React.Component {
     };
   }
 
-  //Generate summary stats from rawHingeData
-  // JY figure out label crowding?
-  // Add some error bits
-  //TODO handle file validation, no virus pls
+  //Add some summary stats from rawHingeData under description
+  // Add error handling to matches.json upload
+  // Shift Description to separate react component with more details
   // footer for my linkedin / personal website
+  // JY figure out label crowding?
 
   handleFileChange = (event) => {
     let reader = new FileReader();
@@ -59,7 +59,9 @@ class App extends React.Component {
           <div className={styles.Description}>
             Brief explanation of what this data is and represents!
           </div>
-          <FileSubmit handleFileChange={this.handleFileChange} />
+          <div className={styles.SubmitContainer}>
+            <FileSubmit handleFileChange={this.handleFileChange} />
+          </div>
         </div>
         <div className={styles.ChartColumn}>
           <div className={styles.ChartHeader}>
