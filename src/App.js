@@ -20,7 +20,6 @@ class App extends React.Component {
 
   // Add error handling to matches.json upload
   // Gap from the bottom on charts
-  // update the header for the charts to suck less
   // Update description with more details
   // flex contact to the bottom of the page always
   //Add some summary stats from rawHingeData under description
@@ -59,27 +58,40 @@ class App extends React.Component {
         <div className={styles.InfoColumn}>
           <div className={styles.Logo}>DateDash</div>
           <div className={styles.Description}>
-            Ever wanted to see the data of things were going with your latest
-            Hinge spree? DateDash is here with the dashboard for your dating
-            analytics. Nothing is uploaded so you have data privacy on the local
-            side. Instructions on how to download your Hinge data{" "}
-            <a
-              href="https://hingeapp.zendesk.com/hc/en-us/articles/360011235813-How-do-I-request-a-copy-of-my-personal-data-"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              here
-            </a>
-            .
+            <p>
+              Ever wanted to see the numbers breakdown from your Hinge activity?
+              Simply upload the matches.json from your Hinge export and let
+              DateDash generate your Dating Dashboard!
+            </p>
+            <p>
+              Download your Hinge data{" "}
+              <a
+                href="https://hingeapp.zendesk.com/hc/en-us/articles/360011235813-How-do-I-request-a-copy-of-my-personal-data-"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+              </a>
+              .
+            </p>
+            <p>
+              Don't worry, none of your hinge data leaves your computer. If you
+              don't believe a line of text on the internet, feel free to
+              disconnect from the internet before clicking that upload button.
+            </p>
           </div>
           <div className={styles.SubmitContainer}>
             <FileSubmit handleFileChange={this.handleFileChange} />
           </div>
-          <Contact />
+          <div className={styles.ContactContainer}>
+            <Contact />
+          </div>
         </div>
         <div className={styles.ChartColumn}>
           <div className={styles.ChartHeader}>
-            {this.state.header || "Example Dashboard"}
+            <span className={styles.ChartHeaderText}>
+              {this.state.header || "Example Dashboard"}
+            </span>
           </div>
           <HingeDonutChart
             data={this.state.processedHingeData || defaultHingeData}

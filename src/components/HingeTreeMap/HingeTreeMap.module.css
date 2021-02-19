@@ -5,51 +5,53 @@
 .MatchedTheyLike,
 .NoMatchedILike,
 .NoMatchedTheyLike {
-  border: 0.5px solid rgba(0, 0, 0, 1);
+  border: 0.5px solid #889244;
   display: flex;
 }
 
 .TreeMap {
   position: relative;
-  background-color: rgba(136, 146, 68, 0.30000001192092896);
+  background-color: #ffffff;
   min-width: 672px;
   height: 230px;
 }
 
 .Matched {
-  background: rgba(136, 146, 68, 0.30000001192092896);
+  background: #e1e4d0;
   min-width: 314px;
   height: 180px;
   margin: 30px 10px 10px 10px;
 }
 
 .NoMatched {
-  background: rgba(136, 146, 68, 0.30000001192092896);
+  background: #e5e5e5;
   min-width: 314px;
   height: 180px;
   margin: 30px 10px 10px 10px;
 }
 
 .MatchedILike {
-  background: rgba(136, 146, 68, 0.30000001192092896);
+  background: #889244;
   align-items: center;
   justify-content: center;
   min-width: 135px;
   height: 130px;
   margin: 30px 10px 10px 10px;
+  color: #ffffff;
 }
 
 .MatchedTheyLike {
-  background: rgba(136, 146, 68, 0.30000001192092896);
+  background: #889244;
   align-items: center;
   justify-content: center;
   min-width: 135px;
   height: 130px;
   margin: 30px 10px 10px 10px;
+  color: #ffffff;
 }
 
 .NoMatchedILike {
-  background: rgba(136, 146, 68, 0.30000001192092896);
+  background: #c4c4c4;
   align-items: center;
   justify-content: center;
   min-width: 135px;
@@ -58,7 +60,7 @@
 }
 
 .NoMatchedTheyLike {
-  background: rgba(136, 146, 68, 0.30000001192092896);
+  background: #c4c4c4;
   align-items: center;
   justify-content: center;
   min-width: 135px;

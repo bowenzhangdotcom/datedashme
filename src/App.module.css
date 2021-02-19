@@ -18,7 +18,6 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 260px;
-  height: 100%;
 }
 
 .ChartColumn {
@@ -47,15 +46,23 @@ body {
 }
 
 .ChartHeader {
-  width: 342px;
-  top: 150px;
-  left: 487px;
+  height: 64px;
   font-weight: Regular;
   font-size: 24px;
   text-align: left;
+  display: flex;
+}
+
+.ChartHeaderText {
+  align-self: flex-end;
 }
 
 .SubmitContainer {
   justify-content: center;
   display: flex;
+  margin-top: 25%;
+}
+
+.ContactContainer {
+  margin-top: auto;
 }
