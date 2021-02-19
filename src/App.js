@@ -20,8 +20,6 @@ class App extends React.Component {
 
   // Add error handling to matches.json upload
   // Gap from the bottom on charts
-  // Update description with more details
-  // flex contact to the bottom of the page always
   //Add some summary stats from rawHingeData under description
 
   handleFileChange = (event) => {
