@@ -1,0 +1,17 @@
+.ContactHeader {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ContactRow {
+  width: 100%;
+  text-align: left;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.Bowen,
+.Jenny {
+  font-size: 16px;
+  margin: 3px;
+}

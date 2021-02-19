@@ -5,10 +5,6 @@ class FileSubmit extends React.Component {
   state = {
     selectedFile: null
   };
-  
-  removeFile(f) {
-    this.setState({ files: this.state.files.filter(x => x !== f) }); 
-}
 
   render() {
     return (
