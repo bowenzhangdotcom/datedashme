@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   // Add error handling to matches.json upload
-  // Gap from the bottom on charts
+  // charts take up full vertical space
   //Add some summary stats from rawHingeData under description
 
   handleFileChange = (event) => {
