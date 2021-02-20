@@ -31,10 +31,17 @@ body {
 }
 
 .Logo {
-  color: rgba(136, 146, 68, 1);
   font-weight: bold;
   font-size: 64px;
   text-align: left;
+}
+
+.DateLogo {
+  color: #889244;
+}
+
+.DashLogo {
+  color: #734492;
 }
 
 .Description {
@@ -42,6 +49,10 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: left;
+}
+
+.MatchesJSON {
+  font-weight: bold;
 }
 
 .ChartHeader {

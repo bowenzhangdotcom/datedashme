@@ -19,10 +19,6 @@ class App extends React.Component {
     };
   }
 
-  // Add error handling to matches.json upload
-  // title and logo clipping
-  // charts take up full vertical space
-
   handleFileChange = (event) => {
     let reader = new FileReader();
     reader.onload = (e) => {
@@ -55,12 +51,22 @@ class App extends React.Component {
     return (
       <div className={styles.BodyRow}>
         <div className={styles.InfoColumn}>
-          <div className={styles.Logo}>DateDash</div>
+          <div className={styles.Logo}>
+            <span className={styles.DateLogo}>Date</span>
+            <span className={styles.DashLogo}>Dash</span>
+          </div>
           <div className={styles.Description}>
             <p>
-              Ever wanted to see the numbers breakdown from your Hinge activity?
-              Simply upload the matches.json from your Hinge export and let
-              DateDash generate your Dating Dashboard!
+              <span>
+                Ever wanted to see the numbers breakdown from your Hinge
+                activity? Simply upload the{" "}
+              </span>
+              <span className={styles.MatchesJSON}>matches.json</span>
+              <span>
+                {" "}
+                from your Hinge export and let DateDash generate your Dating
+                Dashboard!
+              </span>
             </p>
             <p>
               Download your Hinge data{" "}
