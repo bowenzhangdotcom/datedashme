@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./App.module.css";
+import "typeface-roboto";
 
 import FileSubmit from "./components/FileSubmit/FileSubmit";
 import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
@@ -19,8 +20,8 @@ class App extends React.Component {
   }
 
   // Add error handling to matches.json upload
+  // title and logo clipping
   // charts take up full vertical space
-  //Add some summary stats from rawHingeData under description
 
   handleFileChange = (event) => {
     let reader = new FileReader();

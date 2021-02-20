@@ -19,7 +19,7 @@ class HingeTreeMap extends React.Component {
         </span>
         <div className={styles.MatchedILike} style={{flexGrow: `${hingeData["I Liked Them"]}`}}>
           <span className={styles.MatchedILikeLabel}>
-            {`I Liked ${interactionPercentage(hingeData["I Liked Them"])}%`}
+            {`I Liked (${interactionPercentage(hingeData["I Liked Them"])})%`}
           </span>
           <span className={styles.NumLabel}>
           {hingeData["I Liked Them"]}
@@ -27,7 +27,7 @@ class HingeTreeMap extends React.Component {
         </div>
         <div className={styles.MatchedTheyLike} style={{flexGrow: `${hingeData["They Liked Me"]}`}}>
           <span className={styles.MatchedTheyLikeLabel}>
-            {`They Liked ${interactionPercentage(hingeData["They Liked Me"])}%`}
+            {`They Liked (${interactionPercentage(hingeData["They Liked Me"])})%`}
           </span>
           <span className={styles.NumLabel}>
           {hingeData["They Liked Me"]}
@@ -40,7 +40,7 @@ class HingeTreeMap extends React.Component {
         </span>
         <div className={styles.NoMatchedILike} style={{flexGrow: `${hingeData["Swipe Right"]}`}}>
           <span className={styles.NoMatchedILikeLabel}>
-            {`I Liked ${interactionPercentage(hingeData["Swipe Right"])}%`}
+            {`I Liked (${interactionPercentage(hingeData["Swipe Right"])})%`}
           </span>
           <span className={styles.NumLabel}>
           {hingeData["Swipe Right"]}
@@ -48,7 +48,7 @@ class HingeTreeMap extends React.Component {
         </div>
         <div className={styles.NoMatchedTheyLike} style={{flexGrow: `${hingeData["Swipe Left"]}`}}>
           <span className={styles.NoMatchedTheyLikeLabel}>
-            {`I Passed ${interactionPercentage(hingeData["Swipe Left"])}%`}
+            {`I Passed (${interactionPercentage(hingeData["Swipe Left"])})%`}
           </span>
           <span className={styles.NumLabel}>
           {hingeData["Swipe Left"]}

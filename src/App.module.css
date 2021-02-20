@@ -1,7 +1,7 @@
 body {
   text-align: center;
   display: block;
-  font-family: Arial;
+  font-family: Roboto;
   color: rgba(0, 0, 0, 1);
   width: 98%;
   height: 100%;
@@ -17,7 +17,7 @@ body {
   padding: 2%;
   display: flex;
   flex-direction: column;
-  min-width: 260px;
+  min-width: 275px;
 }
 
 .ChartColumn {
@@ -32,13 +32,12 @@ body {
 
 .Logo {
   color: rgba(136, 146, 68, 1);
-  font-weight: Medium;
+  font-weight: bold;
   font-size: 64px;
   text-align: left;
 }
 
 .Description {
-  font-style: Italic;
   font-size: 14px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -47,10 +46,10 @@ body {
 
 .ChartHeader {
   height: 64px;
-  font-weight: Regular;
-  font-size: 24px;
   text-align: left;
   display: flex;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 .ChartHeaderText {
@@ -60,7 +59,8 @@ body {
 .SubmitContainer {
   justify-content: center;
   display: flex;
-  margin-top: 25%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .ContactContainer {
