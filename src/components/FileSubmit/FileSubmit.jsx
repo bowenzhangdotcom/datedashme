@@ -2,9 +2,6 @@ import React from 'react'
 import styles from "./FileSubmit.module.css";
 
 class FileSubmit extends React.Component {
-  state = {
-    selectedFile: null
-  };
 
   render() {
     return (

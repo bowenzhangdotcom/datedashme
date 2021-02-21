@@ -1,12 +1,36 @@
+const validateTime = (timestamp, startDate, endDate) => {
+  let startValid = false;
+  let endValid = false;
+  if (!startDate) {
+    startValid = true;
+  } else {
+    if (timestamp >= startDate) {
+      startValid = true;
+    }
+  }
+  if (!endDate) {
+    endValid = true;
+  } else {
+    if (timestamp < endDate) {
+      endValid = true;
+    }
+  }
+  return startValid && endValid;
+};
+
 const getTotalInteractions = (rawHingeData) => {
   return Object.keys(rawHingeData).length;
 };
 
-const getMatched = (rawHingeData) => {
+const getMatched = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if ("match" in rawHingeData[interactionNum]) {
       count += 1;
+      console.log(rawHingeData[interactionNum]["match"][0]["timestamp"]);
+      console.log(
+        rawHingeData[interactionNum]["match"][0]["timestamp"] > "2020-01-01"
+      );
     }
   }
   return count;
@@ -130,7 +154,7 @@ const getILikedIGhost = (rawHingeData) => {
   return count;
 };
 
-const processHingeData = (rawHingeData) => {
+const processHingeData = (rawHingeData, startDate, endDate) => {
   let processedData = {};
   processedData["Total Interactions"] = getTotalInteractions(rawHingeData);
   processedData["Matched"] = getMatched(rawHingeData);
@@ -146,8 +170,6 @@ const processHingeData = (rawHingeData) => {
   processedData["Conversation"] = conversationArray[0];
   processedData["Phone Conversation"] = conversationArray[1];
   processedData["Fizzle"] = conversationArray[2];
-  console.log(processedData);
-
   return processedData;
 };
 
