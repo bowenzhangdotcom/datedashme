@@ -44,17 +44,6 @@ body {
   color: #734492;
 }
 
-.Description {
-  font-size: 14px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.MatchesJSON {
-  font-weight: bold;
-}
-
 .ChartHeader {
   height: 64px;
   text-align: left;

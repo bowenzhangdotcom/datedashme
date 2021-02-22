@@ -4,6 +4,7 @@ import "typeface-roboto";
 import { format } from "date-fns";
 
 import FileSubmit from "./components/FileSubmit/FileSubmit";
+import Description from "./components/Description/Description";
 import DateSelect from "./components/DateSelect/DateSelect";
 import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
 import HingeTreeMap from "./components/HingeTreeMap/HingeTreeMap";
@@ -83,42 +84,11 @@ class App extends React.Component {
             <span className={styles.DateLogo}>Date</span>
             <span className={styles.DashLogo}>Dash</span>
           </div>
-          <div className={styles.Description}>
-            <p>
-              <span>
-                Ever wanted to see the numbers breakdown from your Hinge
-                activity? Simply upload the{" "}
-              </span>
-              <span className={styles.MatchesJSON}>matches.json</span>
-              <span>
-                {" "}
-                from your Hinge export and let DateDash generate your Dating
-                Dashboard!
-              </span>
-            </p>
-            <p>
-              Download your Hinge data{" "}
-              <a
-                href="https://hingeapp.zendesk.com/hc/en-us/articles/360011235813-How-do-I-request-a-copy-of-my-personal-data-"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                here
-              </a>
-              .
-            </p>
-            <p>
-              Don't worry, none of your hinge data leaves your computer. If you
-              don't believe a line of text on the internet, feel free to
-              disconnect from the internet before clicking that upload button.
-            </p>
-          </div>
+          <Description />
           <div className={styles.SubmitContainer}>
             <FileSubmit handleFileChange={this.handleFileChange} />
           </div>
-          <div className={styles.ContactContainer}>
-            <Contact />
-          </div>
+          <Contact className={styles.ContactContainer} />
         </div>
         <div className={styles.ChartColumn}>
           <div className={styles.ChartHeader}>

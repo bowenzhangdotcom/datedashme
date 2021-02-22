@@ -1,24 +1,8 @@
 const validateTime = (timestamp, startDate, endDate) => {
-  let startValid = false;
-  let endValid = false;
-  if (!startDate) {
-    startValid = true;
-  } else {
-    if (timestamp >= startDate) {
-      startValid = true;
-    }
-  }
-  if (!endDate) {
-    endValid = true;
-  } else {
-    if (timestamp < endDate) {
-      endValid = true;
-    }
-  }
-  return startValid && endValid;
+  return timestamp >= startDate && timestamp <= endDate;
 };
 
-const getTotalInteractions = (rawHingeData) => {
+const getTotalInteractions = (rawHingeData, startDate, endDate) => {
   return Object.keys(rawHingeData).length;
 };
 
@@ -36,7 +20,7 @@ const getMatched = (rawHingeData, startDate, endDate) => {
   return count;
 };
 
-const getNoMatch = (rawHingeData) => {
+const getNoMatch = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (!("match" in rawHingeData[interactionNum])) {
@@ -46,7 +30,7 @@ const getNoMatch = (rawHingeData) => {
   return count;
 };
 
-const getSwipeLeft = (rawHingeData) => {
+const getSwipeLeft = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (
@@ -59,7 +43,7 @@ const getSwipeLeft = (rawHingeData) => {
   return count;
 };
 
-const getSwipeRight = (rawHingeData) => {
+const getSwipeRight = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (
@@ -72,7 +56,7 @@ const getSwipeRight = (rawHingeData) => {
   return count;
 };
 
-const getILikedThem = (rawHingeData) => {
+const getILikedThem = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (
@@ -85,7 +69,7 @@ const getILikedThem = (rawHingeData) => {
   return count;
 };
 
-const getTheyLikedMe = (rawHingeData) => {
+const getTheyLikedMe = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (
@@ -98,7 +82,7 @@ const getTheyLikedMe = (rawHingeData) => {
   return count;
 };
 
-const getConversation = (rawHingeData) => {
+const getConversation = (rawHingeData, startDate, endDate) => {
   const phoneSearch = /(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?/gim;
   let convoCount = 0;
   let phoneConvoCount = 0;
@@ -126,7 +110,7 @@ const getConversation = (rawHingeData) => {
   return [convoCount, phoneConvoCount, fizzleCount];
 };
 
-const getTheyLikedGhost = (rawHingeData) => {
+const getTheyLikedGhost = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (
@@ -140,7 +124,7 @@ const getTheyLikedGhost = (rawHingeData) => {
   return count;
 };
 
-const getILikedIGhost = (rawHingeData) => {
+const getILikedIGhost = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
     if (
@@ -156,17 +140,41 @@ const getILikedIGhost = (rawHingeData) => {
 
 const processHingeData = (rawHingeData, startDate, endDate) => {
   let processedData = {};
-  processedData["Total Interactions"] = getTotalInteractions(rawHingeData);
-  processedData["Matched"] = getMatched(rawHingeData);
-  processedData["No Match"] = getNoMatch(rawHingeData);
-  processedData["Swipe Left"] = getSwipeLeft(rawHingeData);
-  processedData["Swipe Right"] = getSwipeRight(rawHingeData);
-  processedData["I Liked Them"] = getILikedThem(rawHingeData);
-  processedData["They Liked Me"] = getTheyLikedMe(rawHingeData);
-  processedData["I Ghosted"] = getILikedIGhost(rawHingeData);
-  processedData["They Ghosted"] = getTheyLikedGhost(rawHingeData);
+  processedData["Total Interactions"] = getTotalInteractions(
+    rawHingeData,
+    startDate,
+    endDate
+  );
+  processedData["Matched"] = getMatched(rawHingeData, startDate, endDate);
+  processedData["No Match"] = getNoMatch(rawHingeData, startDate, endDate);
+  processedData["Swipe Left"] = getSwipeLeft(rawHingeData, startDate, endDate);
+  processedData["Swipe Right"] = getSwipeRight(
+    rawHingeData,
+    startDate,
+    endDate
+  );
+  processedData["I Liked Them"] = getILikedThem(
+    rawHingeData,
+    startDate,
+    endDate
+  );
+  processedData["They Liked Me"] = getTheyLikedMe(
+    rawHingeData,
+    startDate,
+    endDate
+  );
+  processedData["I Ghosted"] = getILikedIGhost(
+    rawHingeData,
+    startDate,
+    endDate
+  );
+  processedData["They Ghosted"] = getTheyLikedGhost(
+    rawHingeData,
+    startDate,
+    endDate
+  );
 
-  let conversationArray = getConversation(rawHingeData);
+  let conversationArray = getConversation(rawHingeData, startDate, endDate);
   processedData["Conversation"] = conversationArray[0];
   processedData["Phone Conversation"] = conversationArray[1];
   processedData["Fizzle"] = conversationArray[2];
