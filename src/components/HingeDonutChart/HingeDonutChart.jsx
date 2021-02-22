@@ -16,9 +16,9 @@ class HingeDonutChart extends React.Component {
           <VictoryPie
             data={[
               { x: 'They ghosted', y: hingeData["They Ghosted"], fill: "#C4C4C4"}, 
-              { x: 'Fizzled out', y: hingeData["Fizzle"], fill: "#E1E4D0"}, 
-              { x: 'Phone # given', y: hingeData["Phone Conversation"], fill: "#734492"}, 
-              { x: 'Conversation', y: hingeData["Conversation"], fill: "#889244"},
+              { x: 'Fizzled out', y: hingeData["Fizzle"], fill: "#00000"}, 
+              { x: 'Phone # given', y: hingeData["Phone Conversation"], fill: "#889244"}, 
+              { x: 'Conversation', y: hingeData["Conversation"], fill: "#E1E4D0"},
               { x: 'I ghosted', y: hingeData["I Ghosted"], fill: "#e5e5e5" }, 
             ]}
             innerRadius={69}

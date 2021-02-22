@@ -38,21 +38,24 @@ class App extends React.Component {
   }
 
   handleFileChange = (event) => {
-    let reader = new FileReader();
-    reader.onload = (e) => {
-      let obj = JSON.parse(e.target.result);
-      this.setState({ rawHingeData: obj }, () => {
-        this.setState({
-          processedHingeData: processHingeData(
-            this.state.rawHingeData,
-            this.state.startDate,
-            this.state.endDate
-          ),
-          header: "Your Dating Dashboard",
+    if (event.length > 0) {
+      console.log(event[0]);
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        let obj = JSON.parse(e.target.result);
+        this.setState({ rawHingeData: obj }, () => {
+          this.setState({
+            processedHingeData: processHingeData(
+              this.state.rawHingeData,
+              this.state.startDate,
+              this.state.endDate
+            ),
+            header: "Your Dating Dashboard",
+          });
         });
-      });
-    };
-    reader.readAsText(event.target.files[0]);
+      };
+      reader.readAsText(event[0]);
+    }
   };
 
   handleStartDateChange = (event) => {

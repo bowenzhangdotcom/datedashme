@@ -1,21 +1,27 @@
 import React from 'react'
-import styles from "./FileSubmit.module.css";
+//import styles from "./FileSubmit.module.css";
+import { DropzoneArea } from 'material-ui-dropzone';
+import { Publish } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
 
-class FileSubmit extends React.Component {
+const useStyles = makeStyles({
+  myDropZone: {
+    background: '#e5e5e5',
+    borderColor: '#734492',
+  },
+});
 
-  render() {
-    return (
-      <div className={styles.FileSubmitRow}>
-      <span className={styles.ButtonLabel}>Add Your Own Data</span>
-      <div className={styles.FileSubmit}>
-        <label className={styles.CustomFileUpload}>
-          <input className={styles.Input} type="file" onChange={this.props.handleFileChange} />        
-          Upload
-        </label>
-      </div>
-      </div>
+export default function FileSubmit(props) {
+  const classes = useStyles();
+  return (
+      <DropzoneArea
+        onChange={props.handleFileChange}
+        dropzoneText={"Drag and drop your matches.json here or click"}
+        filesLimit={1}
+        showPreviewsInDropzone = {true}
+        Icon={Publish}
+        useChipsForPreview ={true}
+        dropzoneClass={classes.myDropZone}
+      />
    )
   }
-}
-
-export default FileSubmit
