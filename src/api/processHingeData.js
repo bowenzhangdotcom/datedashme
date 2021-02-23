@@ -1,20 +1,25 @@
+import { format } from "date-fns";
+
 const validateTime = (timestamp, startDate, endDate) => {
   return timestamp >= startDate && timestamp <= endDate;
 };
 
-const getTotalInteractions = (rawHingeData, startDate, endDate) => {
-  return Object.keys(rawHingeData).length;
-};
+// const getTotalInteractions = (rawHingeData, startDate, endDate) => {
+//   return Object.keys(rawHingeData).length;
+// };
 
 const getMatched = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
-    if ("match" in rawHingeData[interactionNum]) {
+    if (
+      "match" in rawHingeData[interactionNum] &&
+      validateTime(
+        rawHingeData[interactionNum]["match"][0]["timestamp"],
+        startDate,
+        endDate
+      )
+    ) {
       count += 1;
-      console.log(rawHingeData[interactionNum]["match"][0]["timestamp"]);
-      console.log(
-        rawHingeData[interactionNum]["match"][0]["timestamp"] > "2020-01-01"
-      );
     }
   }
   return count;
@@ -23,7 +28,16 @@ const getMatched = (rawHingeData, startDate, endDate) => {
 const getNoMatch = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
-    if (!("match" in rawHingeData[interactionNum])) {
+    let interactionKey = Object.keys(rawHingeData[interactionNum]);
+    if (
+      interactionKey.length === 1 &&
+      interactionKey[0] !== "match" &&
+      validateTime(
+        rawHingeData[interactionNum][interactionKey][0]["timestamp"],
+        startDate,
+        endDate
+      )
+    ) {
       count += 1;
     }
   }
@@ -33,9 +47,16 @@ const getNoMatch = (rawHingeData, startDate, endDate) => {
 const getSwipeLeft = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
+    let interactionKey = Object.keys(rawHingeData[interactionNum]);
     if (
-      !("match" in rawHingeData[interactionNum]) &&
-      !("like" in rawHingeData[interactionNum])
+      interactionKey.length === 1 &&
+      interactionKey[0] !== "match" &&
+      interactionKey[0] !== "like" &&
+      validateTime(
+        rawHingeData[interactionNum][interactionKey][0]["timestamp"],
+        startDate,
+        endDate
+      )
     ) {
       count += 1;
     }
@@ -46,9 +67,15 @@ const getSwipeLeft = (rawHingeData, startDate, endDate) => {
 const getSwipeRight = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
+    let interactionKey = Object.keys(rawHingeData[interactionNum]);
     if (
-      !("match" in rawHingeData[interactionNum]) &&
-      "like" in rawHingeData[interactionNum]
+      interactionKey.length === 1 &&
+      interactionKey[0] === "like" &&
+      validateTime(
+        rawHingeData[interactionNum][interactionKey][0]["timestamp"],
+        startDate,
+        endDate
+      )
     ) {
       count += 1;
     }
@@ -61,6 +88,11 @@ const getILikedThem = (rawHingeData, startDate, endDate) => {
   for (let interactionNum in rawHingeData) {
     if (
       "match" in rawHingeData[interactionNum] &&
+      validateTime(
+        rawHingeData[interactionNum]["match"][0]["timestamp"],
+        startDate,
+        endDate
+      ) &&
       "like" in rawHingeData[interactionNum]
     ) {
       count += 1;
@@ -74,6 +106,11 @@ const getTheyLikedMe = (rawHingeData, startDate, endDate) => {
   for (let interactionNum in rawHingeData) {
     if (
       "match" in rawHingeData[interactionNum] &&
+      validateTime(
+        rawHingeData[interactionNum]["match"][0]["timestamp"],
+        startDate,
+        endDate
+      ) &&
       !("like" in rawHingeData[interactionNum])
     ) {
       count += 1;
@@ -90,6 +127,11 @@ const getConversation = (rawHingeData, startDate, endDate) => {
   for (let interactionNum in rawHingeData) {
     if (
       "match" in rawHingeData[interactionNum] &&
+      validateTime(
+        rawHingeData[interactionNum]["match"][0]["timestamp"],
+        startDate,
+        endDate
+      ) &&
       "chats" in rawHingeData[interactionNum]
     ) {
       let phoneGiven = false;
@@ -115,6 +157,11 @@ const getTheyLikedGhost = (rawHingeData, startDate, endDate) => {
   for (let interactionNum in rawHingeData) {
     if (
       "match" in rawHingeData[interactionNum] &&
+      validateTime(
+        rawHingeData[interactionNum]["match"][0]["timestamp"],
+        startDate,
+        endDate
+      ) &&
       !("like" in rawHingeData[interactionNum]) &&
       !("chats" in rawHingeData[interactionNum])
     ) {
@@ -129,6 +176,11 @@ const getILikedIGhost = (rawHingeData, startDate, endDate) => {
   for (let interactionNum in rawHingeData) {
     if (
       "match" in rawHingeData[interactionNum] &&
+      validateTime(
+        rawHingeData[interactionNum]["match"][0]["timestamp"],
+        startDate,
+        endDate
+      ) &&
       "like" in rawHingeData[interactionNum] &&
       !("chats" in rawHingeData[interactionNum])
     ) {
@@ -138,15 +190,16 @@ const getILikedIGhost = (rawHingeData, startDate, endDate) => {
   return count;
 };
 
-const processHingeData = (rawHingeData, startDate, endDate) => {
+const processHingeData = (rawHingeData, rawStartDate, rawEndDate) => {
   let processedData = {};
-  processedData["Total Interactions"] = getTotalInteractions(
-    rawHingeData,
-    startDate,
-    endDate
-  );
+  const startDate = format(rawStartDate, "yyyy-MM-dd");
+  const endDate = format(rawEndDate, "yyyy-MM-dd");
+
   processedData["Matched"] = getMatched(rawHingeData, startDate, endDate);
   processedData["No Match"] = getNoMatch(rawHingeData, startDate, endDate);
+  processedData["Total Interactions"] =
+    processedData["Matched"] + processedData["No Match"];
+
   processedData["Swipe Left"] = getSwipeLeft(rawHingeData, startDate, endDate);
   processedData["Swipe Right"] = getSwipeRight(
     rawHingeData,

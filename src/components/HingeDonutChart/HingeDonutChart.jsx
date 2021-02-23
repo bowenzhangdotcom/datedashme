@@ -6,9 +6,11 @@ import { VictoryPie } from 'victory';
 class HingeDonutChart extends React.Component {
   render() {
     let hingeData = this.props.data
+    console.log(hingeData)
     function matchPercentage (subsection) {
       let num = subsection/hingeData["Matched"]*100
-      return Math.round(num * 10) / 10
+      let result = Math.round(num * 10) / 10
+      return isNaN(result) ? 0 : result
     }
     return (
       <div className={styles.DonutContainer}>

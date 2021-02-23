@@ -7,7 +7,8 @@ class HingeTreeMap extends React.Component {
     let hingeData = this.props.data
     function interactionPercentage (subsection) {
       let num = subsection/hingeData["Total Interactions"]*100
-      return Math.round(num * 10) / 10
+      let result = Math.round(num * 10) / 10
+      return isNaN(result) ? 0 : result
     }
     return (
     //Yeah this sucks- redo with nested divs. Flexgrow for width with a minimum

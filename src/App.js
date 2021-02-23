@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./App.module.css";
 import "typeface-roboto";
-import { format } from "date-fns";
 
 import FileSubmit from "./components/FileSubmit/FileSubmit";
 import Description from "./components/Description/Description";
@@ -32,14 +31,13 @@ class App extends React.Component {
         "Total Interactions": 1231,
       },
       header: null,
-      startDate: "2013/01/01",
+      startDate: new Date(2013, 0, 1),
       endDate: Date.now(),
     };
   }
 
   handleFileChange = (event) => {
     if (event.length > 0) {
-      console.log(event[0]);
       let reader = new FileReader();
       reader.onload = (e) => {
         let obj = JSON.parse(e.target.result);
@@ -59,23 +57,34 @@ class App extends React.Component {
   };
 
   handleStartDateChange = (event) => {
-    this.setState({
-      startDate: format(event, "yyyy-MM-dd"),
-      processedHingeData: processHingeData(
-        this.state.rawHingeData,
-        this.state.startDate,
-        this.state.endDate
-      ),
+    this.setState({ startDate: event }, () => {
+      try {
+        this.setState({
+          processedHingeData: processHingeData(
+            this.state.rawHingeData,
+            this.state.startDate,
+            this.state.endDate
+          ),
+        });
+      } catch {
+        console.log("Invalid startDate");
+      }
     });
   };
+
   handleEndDateChange = (event) => {
-    this.setState({
-      endDate: format(event, "yyyy-MM-dd"),
-      processedHingeData: processHingeData(
-        this.state.rawHingeData,
-        this.state.startDate,
-        this.state.endDate
-      ),
+    this.setState({ endDate: event }, () => {
+      try {
+        this.setState({
+          processedHingeData: processHingeData(
+            this.state.rawHingeData,
+            this.state.startDate,
+            this.state.endDate
+          ),
+        });
+      } catch {
+        console.log("Invalid endDate");
+      }
     });
   };
 

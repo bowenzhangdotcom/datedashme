@@ -3,41 +3,29 @@ import styles from "./DateSelect.module.css";
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker,} from '@material-ui/pickers';
 
-class DateSelect extends React.Component {
-  render() {
+export default function DateSelect(props){ 
     return (
       <div className={styles.DateSelectRow}>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
-                disableToolbar
-                variant="inline"
-                format="MM/dd/yyyy"
-                margin="normal"
-                id="date-picker-start"
-                label="Start Date"
-                value={this.props.startDate}
-                onChange={this.props.handleStartDateChange}
-                KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                }}
+              disableToolbar
+              variant="inline"
+              format="MM/dd/yyyy"
+              margin="normal"
+              label="Start Date"
+              value={props.startDate}
+              onChange={props.handleStartDateChange}
             />  
             <KeyboardDatePicker
-                disableToolbar
-                variant="inline"
-                format="MM/dd/yyyy"
-                margin="normal"
-                id="date-picker-end"
-                label="End Date"
-                value={this.props.endDate}
-                onChange={this.props.handleEndDateChange}
-                KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                }}
+              disableToolbar
+              variant="inline"
+              format="MM/dd/yyyy"
+              margin="normal"
+              label="End Date"
+              value={props.endDate}
+              onChange={props.handleEndDateChange}
             />  
           </MuiPickersUtilsProvider>
       </div>
    )
-  }
 }
-
-export default DateSelect
