@@ -9,13 +9,15 @@ import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
 import HingeTreeMap from "./components/HingeTreeMap/HingeTreeMap";
 import Contact from "./components/Contact/Contact";
 import processHingeData from "./api/processHingeData.js";
+import generic_matches from "./api/generic_matches.js";
+
 class App extends React.Component {
   state = {};
 
   constructor(props) {
     super(props);
     this.state = {
-      rawHingeData: null,
+      rawHingeData: generic_matches,
       processedHingeData: {
         Conversation: 34,
         Fizzle: 48,
@@ -34,6 +36,16 @@ class App extends React.Component {
       startDate: new Date(2013, 0, 1),
       endDate: Date.now(),
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      processedHingeData: processHingeData(
+        this.state.rawHingeData,
+        this.state.startDate,
+        this.state.endDate
+      ),
+    });
   }
 
   handleFileChange = (event) => {

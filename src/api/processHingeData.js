@@ -4,10 +4,6 @@ const validateTime = (timestamp, startDate, endDate) => {
   return timestamp >= startDate && timestamp <= endDate;
 };
 
-// const getTotalInteractions = (rawHingeData, startDate, endDate) => {
-//   return Object.keys(rawHingeData).length;
-// };
-
 const getMatched = (rawHingeData, startDate, endDate) => {
   let count = 0;
   for (let interactionNum in rawHingeData) {
