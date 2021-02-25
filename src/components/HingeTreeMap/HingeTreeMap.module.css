@@ -11,7 +11,7 @@
 .TreeMap {
   position: relative;
   background-color: #ffffff;
-  min-width: 672px;
+  min-width: 822px;
   height: 230px;
   margin-top: 35px;
   border: 0.5px solid #889244;
@@ -19,16 +19,16 @@
 
 .Matched {
   background: #e1e4d0;
-  min-width: 314px;
+  min-width: 364px;
   height: 180px;
-  margin: 30px 10px 10px 10px;
+  margin: 30px 15px 30px 30px;
 }
 
 .NoMatched {
   background: #e5e5e5;
-  min-width: 314px;
+  min-width: 364px;
   height: 180px;
-  margin: 30px 10px 10px 10px;
+  margin: 30px 30px 30px 15px;
 }
 
 .MatchedILike {
@@ -37,11 +37,11 @@
   justify-content: center;
   min-width: 135px;
   height: 130px;
-  margin: 30px 10px 10px 10px;
+  margin: 30px 15px 30px 30px;
   color: #ffffff;
-  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
-    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
-    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .MatchedTheyLike {
@@ -50,11 +50,11 @@
   justify-content: center;
   min-width: 135px;
   height: 130px;
-  margin: 30px 10px 10px 10px;
+  margin: 30px 30px 30px 15px;
   color: #ffffff;
-  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
-    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
-    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .NoMatchedILike {
@@ -63,10 +63,10 @@
   justify-content: center;
   min-width: 135px;
   height: 130px;
-  margin: 30px 10px 10px 10px;
-  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
-    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
-    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+  margin: 30px 15px 30px 30px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .NoMatchedTheyLike {
@@ -75,10 +75,10 @@
   justify-content: center;
   min-width: 135px;
   height: 130px;
-  margin: 30px 10px 10px 10px;
-  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%),
-    0 12.5px 10px rgb(0 0 0 / 6%), 0 22.3px 17.9px rgb(0 0 0 / 7%),
-    0 41.8px 33.4px rgb(0 0 0 / 9%), 0 100px 80px rgb(0 0 0 / 12%);
+  margin: 30px 30px 30px 15px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .TotalInteractionsLabel,
@@ -96,4 +96,10 @@
 
 .NumLabel {
   font-size: 36px;
+}
+
+.TotalInteractionsLabel,
+.MatchedLabel,
+.NoMatchedLabel {
+  margin-left: 10px;
 }

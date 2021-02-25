@@ -11,7 +11,6 @@ class HingeTreeMap extends React.Component {
       return isNaN(result) ? 0 : result
     }
     return (
-    //Yeah this sucks- redo with nested divs. Flexgrow for width with a minimum
     <div className={styles.TreeMap}>
       <span className={styles.TotalInteractionsLabel}>{`Total Interactions ${hingeData["Total Interactions"]}`}</span>
       <div className={styles.Matched} style={{flexGrow: `${hingeData["Matched"]}`}}>
