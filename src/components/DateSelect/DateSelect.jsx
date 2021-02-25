@@ -15,6 +15,7 @@ export default function DateSelect(props){
               label="Start Date"
               value={props.startDate}
               onChange={props.handleStartDateChange}
+              className={styles.StartDatePicker}
             />  
             <KeyboardDatePicker
               disableToolbar

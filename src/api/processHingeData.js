@@ -233,8 +233,6 @@ const processHingeData = (rawHingeData, rawStartDate, rawEndDate) => {
 const getStartEndDate = (rawHingeData) => {
   let startDate = Date.now();
   let endDate = new Date(2013, 0, 1);
-  console.log(startDate);
-  console.log(endDate);
   for (let interactionNum in rawHingeData) {
     let currInteraction = rawHingeData[interactionNum];
     let currDate;

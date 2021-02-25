@@ -3,3 +3,7 @@
   flex-direction: row;
   margin-bottom: 15px;
 }
+
+.StartDatePicker {
+  margin-right: 25px;
+}
