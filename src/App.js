@@ -9,7 +9,7 @@ import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
 import HingeTreeMap from "./components/HingeTreeMap/HingeTreeMap";
 import Contact from "./components/Contact/Contact";
 import Instructions from "./components/Instructions/Instructions";
-import processHingeData from "./api/processHingeData.js";
+import { processHingeData, getStartEndDate } from "./api/processHingeData.js";
 import generic_matches from "./api/generic_matches.js";
 
 class App extends React.Component {
@@ -20,18 +20,18 @@ class App extends React.Component {
     this.state = {
       rawHingeData: generic_matches,
       processedHingeData: {
-        Conversation: 34,
-        Fizzle: 48,
-        "I Ghosted": 22,
-        "I Liked Them": 85,
-        Matched: 149,
-        "No Match": 1082,
-        "Phone Conversation": 24,
-        "Swipe Left": 859,
-        "Swipe Right": 223,
-        "They Ghosted": 21,
-        "They Liked Me": 64,
-        "Total Interactions": 1231,
+        Conversation: 0,
+        Fizzle: 0,
+        "I Ghosted": 0,
+        "I Liked Them": 0,
+        Matched: 0,
+        "No Match": 0,
+        "Phone Conversation": 0,
+        "Swipe Left": 0,
+        "Swipe Right": 0,
+        "They Ghosted": 0,
+        "They Liked Me": 0,
+        "Total Interactions": 0,
       },
       header: null,
       startDate: new Date(2013, 0, 1),
@@ -40,12 +40,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    let dates = getStartEndDate(this.state.rawHingeData);
+    let pHingeData = processHingeData(
+      this.state.rawHingeData,
+      dates["startDate"],
+      dates["endDate"]
+    );
     this.setState({
-      processedHingeData: processHingeData(
-        this.state.rawHingeData,
-        this.state.startDate,
-        this.state.endDate
-      ),
+      processedHingeData: pHingeData,
+      startDate: dates["startDate"],
+      endDate: dates["endDate"],
+      header: "Your Dating Dashboard",
     });
   }
 
@@ -55,12 +60,16 @@ class App extends React.Component {
       reader.onload = (e) => {
         let obj = JSON.parse(e.target.result);
         this.setState({ rawHingeData: obj }, () => {
+          let dates = getStartEndDate(this.state.rawHingeData);
+          let pHingeData = processHingeData(
+            this.state.rawHingeData,
+            dates["startDate"],
+            dates["endDate"]
+          );
           this.setState({
-            processedHingeData: processHingeData(
-              this.state.rawHingeData,
-              this.state.startDate,
-              this.state.endDate
-            ),
+            processedHingeData: pHingeData,
+            startDate: dates["startDate"],
+            endDate: dates["endDate"],
             header: "Your Dating Dashboard",
           });
         });

@@ -230,4 +230,23 @@ const processHingeData = (rawHingeData, rawStartDate, rawEndDate) => {
   return processedData;
 };
 
-export default processHingeData;
+const getStartEndDate = (rawHingeData) => {
+  let startDate = Date.now();
+  let endDate = new Date(2013, 0, 1);
+  console.log(startDate);
+  console.log(endDate);
+  for (let interactionNum in rawHingeData) {
+    let currInteraction = rawHingeData[interactionNum];
+    let currDate;
+    if ("match" in currInteraction) {
+      currDate = new Date(currInteraction["match"][0]["timestamp"]);
+    } else {
+      let interactionKey = Object.keys(currInteraction);
+      currDate = new Date(currInteraction[interactionKey][0]["timestamp"]);
+    }
+    startDate = Math.min(startDate, currDate);
+    endDate = Math.max(endDate, currDate);
+  }
+  return { startDate: startDate, endDate: endDate };
+};
+export { processHingeData, getStartEndDate };
