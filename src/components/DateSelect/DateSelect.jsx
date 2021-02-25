@@ -7,16 +7,17 @@ export default function DateSelect(props){
     return (
       <div className={styles.DateSelectRow}>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <KeyboardDatePicker
-              disableToolbar
-              variant="inline"
-              format="MM/dd/yyyy"
-              margin="normal"
-              label="Start Date"
-              value={props.startDate}
-              onChange={props.handleStartDateChange}
-              className={styles.StartDatePicker}
-            />  
+            <div className={styles.StartDatePicker}>
+              <KeyboardDatePicker
+                disableToolbar
+                variant="inline"
+                format="MM/dd/yyyy"
+                margin="normal"
+                label="Start Date"
+                value={props.startDate}
+                onChange={props.handleStartDateChange}
+              /> 
+            </div>
             <KeyboardDatePicker
               disableToolbar
               variant="inline"
