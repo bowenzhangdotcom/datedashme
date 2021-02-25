@@ -33,7 +33,7 @@ class App extends React.Component {
         "They Liked Me": 0,
         "Total Interactions": 0,
       },
-      header: null,
+      header: "Example Dashboard",
       startDate: new Date(2013, 0, 1),
       endDate: Date.now(),
     };
@@ -50,7 +50,6 @@ class App extends React.Component {
       processedHingeData: pHingeData,
       startDate: dates["startDate"],
       endDate: dates["endDate"],
-      header: "Your Dating Dashboard",
     });
   }
 
@@ -127,9 +126,7 @@ class App extends React.Component {
         </div>
         <div className={styles.ChartColumn}>
           <div className={styles.ChartHeader}>
-            <span className={styles.ChartHeaderText}>
-              {this.state.header || "Example Dashboard"}
-            </span>
+            <span className={styles.ChartHeaderText}>{this.state.header}</span>
           </div>
           <DateSelect
             handleStartDateChange={this.handleStartDateChange}
