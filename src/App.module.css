@@ -44,7 +44,7 @@ body {
 }
 
 .ChartHeader {
-  height: 64px;
+  height: 32px;
   text-align: left;
   display: flex;
   font-weight: bold;
@@ -58,8 +58,7 @@ body {
 .SubmitContainer {
   justify-content: center;
   display: flex;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: 20px;
 }
 
 .ContactContainer {

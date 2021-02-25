@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   myDropZone: {
-    background: '#e5e5e5',
+    background: '#f1f1f1',
     borderColor: '#734492',
     minHeight: '200px'
   },
