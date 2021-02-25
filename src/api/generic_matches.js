@@ -20,7 +20,7 @@ const generic_matches = [
   {
     chats: [
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2018-07-17T00:15:01.759000",
         type: "chats",
       },
@@ -220,7 +220,7 @@ const generic_matches = [
   {
     chats: [
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2020-12-15T00:42:47.364000",
         type: "chats",
       },
@@ -270,7 +270,7 @@ const generic_matches = [
         type: "chats",
       },
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2018-07-15T22:33:22.493000",
         type: "chats",
       },
@@ -298,7 +298,7 @@ const generic_matches = [
   {
     chats: [
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2019-12-25T14:43:02.695000",
         type: "chats",
       },
@@ -701,7 +701,7 @@ const generic_matches = [
   {
     chats: [
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2019-11-18T03:51:49.249000",
         type: "chats",
       },
@@ -1094,7 +1094,7 @@ const generic_matches = [
         type: "chats",
       },
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2020-11-12T04:01:28.003000",
         type: "chats",
       },
@@ -1273,7 +1273,7 @@ const generic_matches = [
         type: "chats",
       },
       {
-        body: "Example Chat",
+        body: "123-456-7890",
         timestamp: "2018-07-23T01:43:30.727000",
         type: "chats",
       },

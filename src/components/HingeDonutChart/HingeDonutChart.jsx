@@ -29,7 +29,9 @@ class HingeDonutChart extends React.Component {
                 fill: ({ datum }) => datum.fill
               },
               labels: {
-                fontFamily: "Roboto"
+                fontFamily: "Roboto",
+                display: ({datum}) => datum.y > 0 ? "block": "none",
+                alignText: "center"
               }
             }}
           />
