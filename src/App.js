@@ -8,6 +8,7 @@ import DateSelect from "./components/DateSelect/DateSelect";
 import HingeDonutChart from "./components/HingeDonutChart/HingeDonutChart";
 import HingeTreeMap from "./components/HingeTreeMap/HingeTreeMap";
 import Contact from "./components/Contact/Contact";
+import Instructions from "./components/Instructions/Instructions";
 import processHingeData from "./api/processHingeData.js";
 import generic_matches from "./api/generic_matches.js";
 
@@ -112,6 +113,7 @@ class App extends React.Component {
           <div className={styles.SubmitContainer}>
             <FileSubmit handleFileChange={this.handleFileChange} />
           </div>
+          <Instructions />
           <Contact className={styles.ContactContainer} />
         </div>
         <div className={styles.ChartColumn}>

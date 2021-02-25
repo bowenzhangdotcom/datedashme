@@ -8,11 +8,13 @@ const useStyles = makeStyles({
   myDropZone: {
     background: '#e5e5e5',
     borderColor: '#734492',
+    minHeight: '200px'
   },
   myDropZoneText: {
-    fontSize: "20px", 
-    paddingLeft: "2.5%", 
+    fontSize: "20px",
+    paddingLeft: "2.5%",
     paddingRight: "2.5%",
+    marginTop: "10%",
   }
 });
 

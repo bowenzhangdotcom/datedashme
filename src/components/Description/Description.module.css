@@ -1,8 +1,8 @@
 .Description {
   font-size: 14px;
   margin-top: 20px;
-  margin-bottom: 20px;
   text-align: left;
+  line-height: 18px;
 }
 
 .MatchesJSON {
