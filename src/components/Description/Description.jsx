@@ -16,8 +16,9 @@ class Description extends React.Component {
         <Button variant="outlined" style={{color: "#734492", borderColor: "#734492"}} target="_blank" href="https://hingeapp.zendesk.com/hc/en-us/articles/360011235813-How-do-I-request-a-copy-of-my-personal-data-">Download your Hinge Data</Button>
         <p>
           Don't worry, none of your hinge data leaves your computer. If you
-          don't believe a line of text on the internet, feel free to
-          disconnect from the internet before clicking that upload button.
+          don't believe a line of text on a website, feel free to
+          disconnect from the internet before clicking that upload button or check out the 
+          <span> <a target="_blank" rel="noopener noreferrer" href="https://github.com/bowenzhangdotcom/datedashme">repository</a>.</span>
         </p>
       </div>
    )
