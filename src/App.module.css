@@ -36,19 +36,19 @@ body {
 }
 
 .DateLogo {
-  color: #889244;
+  color: #04957d;
 }
 
 .DashLogo {
-  color: #734492;
+  color: #225763;
 }
 
 .ChartHeader {
-  height: 32px;
+  height: 48px;
   text-align: left;
   display: flex;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .ChartHeaderText {

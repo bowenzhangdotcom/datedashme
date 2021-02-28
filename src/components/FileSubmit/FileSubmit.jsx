@@ -1,14 +1,15 @@
 import React from 'react'
 import styles from "./FileSubmit.module.css";
 import { DropzoneArea } from 'material-ui-dropzone';
-import { Publish } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   myDropZone: {
     background: '#f1f1f1',
-    borderColor: '#734492',
-    minHeight: '200px'
+    borderColor: '#04957D',
+    minHeight: '200px',
+    borderWidth: "1px",
+    borderStyle: "dashed"
   },
   myDropZoneText: {
     fontSize: "20px",
@@ -24,10 +25,9 @@ export default function FileSubmit(props) {
     <div className={styles.DropzoneAreaContainer}>
       <DropzoneArea
         onChange={props.handleFileChange}
-        dropzoneText={"Drag and drop your matches.json here or click"}
+        dropzoneText={"Select your matches.json or drag here"}
         filesLimit={1}
         showPreviewsInDropzone = {true}
-        Icon={Publish}
         useChipsForPreview ={true}
         dropzoneClass={classes.myDropZone}
         dropzoneParagraphClass={classes.myDropZoneText}

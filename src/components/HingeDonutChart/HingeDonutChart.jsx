@@ -16,11 +16,11 @@ class HingeDonutChart extends React.Component {
         <div className={styles.DonutChart}>
           <VictoryPie
             data={[
-              { x: 'They ghosted', y: hingeData["They Ghosted"], fill: "#C4C4C4"}, 
-              { x: 'Fizzled out', y: hingeData["Fizzle"], fill: "#00000"}, 
-              { x: 'Phone # given', y: hingeData["Phone Conversation"], fill: "#889244"}, 
-              { x: 'Conversation', y: hingeData["Conversation"], fill: "#E1E4D0"},
-              { x: 'I ghosted', y: hingeData["I Ghosted"], fill: "#e5e5e5" }, 
+              { x: 'They ghosted', y: hingeData["They Ghosted"], fill: "#C0DED9"}, 
+              { x: 'Fizzled out', y: hingeData["Fizzle"], fill: "#7BAAA2"}, 
+              { x: 'Phone # given', y: hingeData["Phone Conversation"], fill: "#003D33"}, 
+              { x: 'Conversation', y: hingeData["Conversation"], fill: "#2E7E71"},
+              { x: 'I ghosted', y: hingeData["I Ghosted"], fill: "#E5F4F2" }, 
             ]}
             innerRadius={69}
             labels={({ datum }) => `${datum.x} \n ${datum.y} (${matchPercentage(datum.y)}%)`}

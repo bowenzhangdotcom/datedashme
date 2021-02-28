@@ -13,7 +13,7 @@ class Description extends React.Component {
           from your Hinge export and let DateDash generate your Dating
           Dashboard!
         </p>
-        <Button variant="outlined" style={{color: "#734492", borderColor: "#734492"}} target="_blank" href="https://hingeapp.zendesk.com/hc/en-us/articles/360011235813-How-do-I-request-a-copy-of-my-personal-data-">Download your Hinge Data</Button>
+        <Button variant="outlined" style={{color: "#04957D", borderColor: "#04957D"}} target="_blank" href="https://hingeapp.zendesk.com/hc/en-us/articles/360011235813-How-do-I-request-a-copy-of-my-personal-data-">Download your Hinge Data</Button>
         <p>
           Don't worry, none of your hinge data leaves your computer. If you
           don't believe a line of text on a website, feel free to

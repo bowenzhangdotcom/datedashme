@@ -55,7 +55,7 @@ export default function Instructions() {
 
   return (
     <div className = {styles.InstructionsContainer}>
-      <Button variant="outlined" style={{color: "#734492", borderColor: "#734492"}} onClick={handleClickOpen}>
+      <Button variant="outlined" style={{color: "#04957D", borderColor: "#04957D"}} onClick={handleClickOpen}>
         What do the labels mean?
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
