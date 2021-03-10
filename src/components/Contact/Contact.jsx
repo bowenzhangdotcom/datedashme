@@ -24,6 +24,14 @@ class Contact extends React.Component {
             </a>
             </span>
         </div>
+        <div className={styles.BuyTea}>
+            <a
+              href="https://www.buymeacoffee.com/bowenzhang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Support the site!
+            </a>
+        </div>
       </div>
    )
   }
